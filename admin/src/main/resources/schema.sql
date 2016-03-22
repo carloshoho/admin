@@ -1,0 +1,17 @@
+create table Menu (id varchar(255) not null, name varchar(255), url varchar(255), parentMenu_id varchar(255), privilege_id varchar(255), primary key (id));
+create table Position (id varchar(255) not null, description varchar(255), name varchar(255), parentPosition_id varchar(255), primary key (id));
+create table Privilege (id varchar(255) not null, description varchar(255), name varchar(255), primary key (id));
+create table Role (id varchar(255) not null, description varchar(255), name varchar(255), primary key (id));
+create table Role_Privilege (Role_id varchar(255) not null, privileges_id varchar(255) not null, primary key (Role_id, privileges_id));
+create table User (id varchar(255) not null, available boolean not null, name varchar(255), password varchar(255), primary key (id));
+create table User_Position (users_id varchar(255) not null, positions_id varchar(255) not null, primary key (users_id, positions_id));
+create table User_Role (User_id varchar(255) not null, roles_id varchar(255) not null, primary key (User_id, roles_id));
+alter table Menu add constraint FKtb21qddwwtana13qni3m5v1ud foreign key (parentMenu_id) references Menu;
+alter table Menu add constraint FK7xe49o3ulekic8l04a3ke3dv5 foreign key (privilege_id) references Privilege;
+alter table Position add constraint FKjafpubhtv9hhsc8rbodo5ymnf foreign key (parentPosition_id) references Position;
+alter table Role_Privilege add constraint FK1doaajt8shs4qv3y7scc3ipao foreign key (privileges_id) references Privilege;
+alter table Role_Privilege add constraint FKlc11r7a9hwn8471upun0jhqhd foreign key (Role_id) references Role;
+alter table User_Position add constraint FKaxp4j4ujniqf7lip34w6g44yr foreign key (positions_id) references Position;
+alter table User_Position add constraint FKkwyx9kxrtbfs0cxlqyyx3eoq foreign key (users_id) references User;
+alter table User_Role add constraint FK7qnwwe579g9frolyprat52l4d foreign key (roles_id) references Role;
+alter table User_Role add constraint FKc52d1rv3ijbpu6lo2v3rej1tx foreign key (User_id) references User;
