@@ -1,0 +1,46 @@
+body {
+  padding-top: 40px;
+  padding-bottom: 40px;
+  background-color: #ECF0F5;
+  font-family: "Microsoft YaHei", "Arial", "Verdana", "Tahoma";
+  color: #424242;
+  overflow-x:hidden;
+  overflow-y:hidden;
+}
+
+.main-header {
+  background-color: #00a65a;
+}
+
+.main-sidebar {
+  position: fixed;
+  top: 51px;
+  bottom: 0;
+  left: 0;
+  z-index: 1000;
+  display: block;
+  padding: 20px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  background-color: #F9FAFC;
+  border-right: 1px solid #aaa;
+}
+
+.content-wrapper {
+  padding-top: 5px;
+}
+
+.main-footer {
+  
+}
+
+footer {
+  border-left: 1px solid #d2d6de;
+}
+
+.main-footer {
+  background: #fff;
+  padding: 15px;
+  color: #444;
+  border-top: 1px solid #d2d6de;
+}

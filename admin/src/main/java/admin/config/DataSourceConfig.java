@@ -24,7 +24,8 @@ public class DataSourceConfig {
 
   @Bean
   public DataSource dataSource() {
-    return new EmbeddedDatabaseBuilder().setType(EmbeddedDatabaseType.HSQL).addScript("classpath:schema.sql")
+    return new EmbeddedDatabaseBuilder().setType(EmbeddedDatabaseType.HSQL).setScriptEncoding("UTF-8")
+        .addScript("classpath:schema.sql")
         .addScript("classpath:test-data.sql").build();
   }
 

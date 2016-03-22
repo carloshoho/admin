@@ -27,7 +27,6 @@ public class JpaConfig {
 		adapter.setDatabase(Database.HSQL);
 		adapter.setShowSql(true);
 		adapter.setGenerateDdl(true);
-		adapter.setDatabasePlatform("org.hibernate.dialect.HSQLDialect");
 		return adapter;
 	}
 }
